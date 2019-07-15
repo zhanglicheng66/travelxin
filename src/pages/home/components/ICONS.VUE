@@ -79,6 +79,7 @@
         .icons >>> .swiper-container
             height :0
             padding-bottom:50%
+            
         .icon
             position:relative
             overflow: hidden
