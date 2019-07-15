@@ -47,5 +47,6 @@
             text-align:center
             .arrow-icon
                 margin-left:-0.02rem
-                font-size:0.2rem     
+                font-size:0.2rem  
+                   
 </style>
