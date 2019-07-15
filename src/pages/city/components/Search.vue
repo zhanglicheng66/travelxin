@@ -14,14 +14,15 @@
     @import '~styles/varibles.styl'
     .search
         
-        height 0.72rem
+        height 0.62rem
         padding:0.1rem
+        margin-top :-0.1rem
         background :$bgColor  
         .search-input
             box-sizing :border-box
             width:100% 
             height :0.62rem
-            padding:0 0.1rem
+            padding:0 0.2rem
             line-height :0.62rem
             border-radius :0.06rem 
             color:#666   
