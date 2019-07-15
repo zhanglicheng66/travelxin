@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper>
+        <swiper :options='swiperOption'> 
             <swiper-slide v-for='(page,index) in pages' :key='index'>
                 <div class="icon" v-for='item in page' :key='item.id'>
                     <div class="icon-img">
@@ -16,53 +16,22 @@
 </template>
 
 <script>
-    name:'HomeIcons'
+
     export default {
+        props:{
+        list:Array
+    },
         data(){
             return{
-                iconList:[{
-                    id:'0001',
-                    imgUrl:'https://gw.alicdn.com/tfs/TB1Wxi2trsrBKNjSZFpXXcXhFXa-183-144.png',
-                    desc:'景点门票'
-                },{
-                    id:'0002',
-                    imgUrl:'https://gw.alicdn.com/tfs/TB1Wxi2trsrBKNjSZFpXXcXhFXa-183-144.png',
-                    desc:'滑雪季节'
-                },{
-                    id:'0003',
-                    imgUrl:'https://gw.alicdn.com/tfs/TB1Wxi2trsrBKNjSZFpXXcXhFXa-183-144.png',
-                    desc:'泡温泉'
-                },{
-                    id:'0004',
-                    imgUrl:'https://gw.alicdn.com/tfs/TB1Wxi2trsrBKNjSZFpXXcXhFXa-183-144.png',
-                    desc:'动植园'
-                },{
-                    id:'0005',
-                    imgUrl:'https://gw.alicdn.com/tfs/TB1Wxi2trsrBKNjSZFpXXcXhFXa-183-144.png',
-                    desc:'滑雪季节'
-                },{
-                    id:'0006',
-                    imgUrl:'https://gw.alicdn.com/tfs/TB1Wxi2trsrBKNjSZFpXXcXhFXa-183-144.png',
-                    desc:'滑雪季节'
-                },{
-                    id:'0007',
-                    imgUrl:'https://gw.alicdn.com/tfs/TB1Wxi2trsrBKNjSZFpXXcXhFXa-183-144.png',
-                    desc:'滑雪季节'
-                },{
-                    id:'0008',
-                    imgUrl:'https://gw.alicdn.com/tfs/TB1Wxi2trsrBKNjSZFpXXcXhFXa-183-144.png',
-                    desc:'滑雪季节'
-                },{
-                    id:'0009',
-                    imgUrl:'https://gw.alicdn.com/tfs/TB1Wxi2trsrBKNjSZFpXXcXhFXa-183-144.png',
-                    desc:'一日游'
-                }]
+                swiperOption:{
+                    autoplay:false
+                }
             }
         },
         computed: {
             pages (){
                 const pages = []
-                this.iconList.forEach((item,index)=>{
+                this.list.forEach((item,index)=>{
                     const page = Math.floor(index/8)
                     if(!pages[page]){
                         pages[page]=[]
